@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Track - Admin Dashboard</title>
+
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+
+    <div class="admin-container">
+
+        <!-- SIDEBAR -->
+        <aside class="admin-sidebar">
+
+            <div class="admin-brand">
+                <h2>Food<span>Track</span></h2>
+                <p>Admin Panel</p>
+            </div>
+
+            <nav class="admin-nav">
+                <button class="active" onclick="showAdminSection('dashboardSection', this)">
+                    Dashboard
+                </button>
+
+                <button onclick="showAdminSection('recipesSection', this)">
+                    Manage Recipes
+                </button>
+
+                <button onclick="showAdminSection('foodsSection', this)">
+                    Manage Foods
+                </button>
+
+                <button onclick="showAdminSection('usersSection', this)">
+                    Manage Users
+                </button>
+            </nav>
+
+            <button class="admin-logout" onclick="adminLogout()">
+                Logout
+            </button>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="admin-main">
+
+            <header class="admin-header">
+                <div>
+                    <h1>Admin Dashboard</h1>
+                    <p>Welcome to Food Track Administration</p>
+                </div>
+
+                <div class="admin-profile">
+                    <span>Admin</span>
+                </div>
+            </header>
+
+
+            <!-- DASHBOARD SECTION -->
+            <section id="dashboardSection" class="admin-section">
+
+                <h2>Overview</h2>
+
+                <div class="admin-stats">
+
+                    <div class="stat-card">
+                        <h3>Total Users</h3>
+                        <p id="totalUsers">0</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <h3>Total Recipes</h3>
+                        <p id="totalRecipes">0</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <h3>Total Food Items</h3>
+                        <p id="totalFoods">0</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- MANAGE RECIPES SECTION -->
+            <section id="recipesSection" class="admin-section" style="display:none;">
+
+                <div class="section-heading">
+                    <h2>Manage Recipes</h2>
+
+                    <button onclick="showRecipeForm()">
+                        + Add New Recipe
+                    </button>
+                </div>
+
+                
+                <div id="recipeFormContainer" style="display:none;">
+
+                    <h3>Add New Recipe</h3>
+
+                    <form id="recipeForm">
+
+                        <label for="recipeName">Recipe Name</label>
+                        <input type="text" id="recipeName" placeholder="Enter recipe name" required>
+
+                        <label for="recipeImage">Recipe Image URL</label>
+                        <input type="url" id="recipeImage" placeholder="Enter image URL">
+
+                        <label for="mainIngredient">Main Ingredient</label>
+                        <input type="text" id="mainIngredient" placeholder="Example: Wheat Flour" required>
+
+                        <label for="recipeIngredients">Ingredients</label>
+                        <textarea id="recipeIngredients"
+                            placeholder="Enter each ingredient on a new line"
+                            required></textarea>
+
+                        <label for="recipeInstructions">Cooking Instructions</label>
+                        <textarea id="recipeInstructions"
+                            placeholder="Enter each cooking step on a new line"
+                            required></textarea>
+
+                        <label for="cookTime">Cooking Time (minutes)</label>
+                        <input type="number" id="cookTime" min="0" required>
+
+                        <button type="submit">Save Recipe</button>
+
+                        <button type="button" onclick="hideRecipeForm()">
+                            Cancel
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+                <div id="adminRecipeList"></div>
+
+            </section>
+
+
+            <!-- MANAGE FOODS SECTION -->
+            <section id="foodsSection" class="admin-section" style="display:none;">
+
+                <h2>Manage Foods</h2>
+
+                <div id="adminFoodList">
+                    Loading food items...
+                </div>
+
+            </section>
+
+
+            <!-- MANAGE USERS SECTION -->
+            <section id="usersSection" class="admin-section" style="display:none;">
+
+                <h2>Manage Users</h2>
+
+                <div id="adminUserList">
+                    Loading users...
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="admin.js"></script>
+
+</body>
+</html>

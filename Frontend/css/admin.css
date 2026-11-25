@@ -1,0 +1,330 @@
+
+/* =====================================
+   FOOD TRACK ADMIN DASHBOARD
+===================================== */
+
+:root {
+    --green: #3F7D58;
+    --green-dark: #24583F;
+    --green-soft: #E5F0E9;
+    --cream: #FFF8E7;
+    --orange: #F4A261;
+    --text: #34423A;
+    --muted: #68736D;
+    --line: #D9DED9;
+    --white: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #F5F8F5;
+    color: var(--text);
+}
+
+.admin-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* SIDEBAR */
+
+.admin-sidebar {
+    width: 250px;
+    background: var(--green-dark);
+    color: var(--white);
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.admin-brand {
+    margin-bottom: 45px;
+}
+
+.admin-brand h2 {
+    font-size: 27px;
+}
+
+.admin-brand h2 span {
+    color: var(--orange);
+}
+
+.admin-brand p {
+    font-size: 13px;
+    color: #D9E9DE;
+    margin-top: 6px;
+}
+
+.admin-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.admin-nav button {
+    width: 100%;
+    padding: 14px 16px;
+    text-align: left;
+    border: none;
+    border-radius: 9px;
+    background: transparent;
+    color: var(--white);
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.admin-nav button:hover,
+.admin-nav button.active {
+    background: var(--green);
+}
+
+.admin-logout {
+    margin-top: auto;
+    padding: 13px;
+    border: 1px solid #A8C5B1;
+    border-radius: 9px;
+    background: transparent;
+    color: var(--white);
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.admin-logout:hover {
+    background: #A83B3B;
+    border-color: #A83B3B;
+}
+
+/* MAIN CONTENT */
+
+.admin-main {
+    flex: 1;
+    padding: 35px;
+    min-width: 0;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.admin-header h1 {
+    font-size: 27px;
+    color: var(--green-dark);
+    margin-bottom: 8px;
+}
+
+.admin-header p {
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.admin-profile {
+    background: var(--green-soft);
+    color: var(--green-dark);
+    padding: 11px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+/* SECTIONS */
+
+.admin-section h2 {
+    color: var(--green-dark);
+    font-size: 21px;
+    margin-bottom: 22px;
+}
+
+/* STATISTICS */
+
+.admin-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.stat-card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.stat-card h3 {
+    color: var(--muted);
+    font-size: 14px;
+    font-weight: normal;
+    margin-bottom: 18px;
+}
+
+.stat-card p {
+    color: var(--green);
+    font-size: 32px;
+    font-weight: bold;
+}
+
+/* SECTION HEADING */
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.section-heading h2 {
+    margin-bottom: 0;
+}
+
+.section-heading button,
+#recipeForm button {
+    background: var(--green);
+    color: var(--white);
+    border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.section-heading button:hover,
+#recipeForm button:hover {
+    background: var(--green-dark);
+}
+
+/* RECIPE FORM */
+
+#recipeFormContainer {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    max-width: 700px;
+    margin-bottom: 30px;
+}
+
+#recipeFormContainer h3 {
+    color: var(--green-dark);
+    margin-bottom: 20px;
+}
+
+#recipeForm {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#recipeForm label {
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--text);
+}
+
+#recipeForm input,
+#recipeForm textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+}
+
+#recipeForm textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+#recipeForm input:focus,
+#recipeForm textarea:focus {
+    border-color: var(--green);
+}
+
+/* TABLES AND LISTS */
+
+#adminRecipeList,
+#adminFoodList,
+#adminUserList {
+    margin-top: 20px;
+}
+
+.admin-data-card {
+    background: var(--white);
+    padding: 18px;
+    margin-bottom: 12px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 900px) {
+
+    .admin-sidebar {
+        width: 210px;
+    }
+
+    .admin-main {
+        padding: 25px;
+    }
+
+    .admin-stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .admin-container {
+        flex-direction: column;
+    }
+
+    .admin-sidebar {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .admin-brand {
+        margin-bottom: 20px;
+    }
+
+    .admin-nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .admin-logout {
+        margin-top: 20px;
+    }
+
+    .admin-main {
+        padding: 20px;
+    }
+
+    .admin-header {
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .admin-header h1 {
+        font-size: 21px;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,604 @@
+
+/* =========================================
+   FOOD TRACK - DASHBOARD DESIGN
+========================================= */
+
+#dashboardScreen {
+    display: none;
+    min-height: 100vh;
+    padding-bottom: 110px;
+    background: #FFF8E7;
+    color: #34423A;
+    font-family: 'Poppins', Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+#dashboardScreen * {
+    box-sizing: border-box;
+}
+
+/* HEADER */
+
+#dashboardScreen .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 22px;
+    background: #FFF8E7;
+}
+
+#dashboardScreen .header-brand h2 {
+    margin: 0;
+    color: #24583F;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+#dashboardScreen .header-brand h2::after {
+    content: ".";
+    color: #F4A261;
+}
+
+#dashboardScreen .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+#dashboardScreen .notification-button {
+    width: 43px;
+    height: 43px;
+    border: none;
+    border-radius: 14px;
+    background: #E5F0E9;
+    color: #3F7D58;
+    font-size: 21px;
+    cursor: pointer;
+}
+
+#dashboardScreen .logout-button {
+    border: none;
+    border-radius: 13px;
+    padding: 12px 17px;
+    background: #3F7D58;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* NOTIFICATION PANEL */
+
+#dashboardScreen .notification-panel {
+    margin: 0 18px 18px;
+    padding: 18px;
+    background: white;
+    border: 1px solid #DCEADF;
+    border-radius: 18px;
+    box-shadow: 0 5px 18px rgba(36,88,63,0.08);
+}
+
+#dashboardScreen .notification-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+#dashboardScreen .notification-header h3 {
+    margin: 0;
+    color: #24583F;
+}
+
+#dashboardScreen .notification-header button {
+    border: none;
+    background: #E5F0E9;
+    color: #24583F;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+
+/* MAIN CONTENT */
+
+#dashboardScreen .dashboard-main {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 8px 22px 35px;
+}
+
+/* WELCOME CARD */
+
+#dashboardScreen .dashboard-welcome {
+    position: relative;
+    overflow: hidden;
+    min-height: 190px;
+    padding: 28px 24px;
+    margin-bottom: 28px;
+    border-radius: 25px;
+    background: linear-gradient(125deg, #DDEFE1, #FFF0DB);
+    box-shadow: 0 7px 20px rgba(36,88,63,0.08);
+}
+
+#dashboardScreen .dashboard-welcome::after {
+    content: "🥑";
+    position: absolute;
+    right: 15px;
+    bottom: 8px;
+    font-size: 88px;
+    opacity: 0.85;
+    transform: rotate(-12deg);
+}
+
+#dashboardScreen .dashboard-welcome h1 {
+    position: relative;
+    z-index: 1;
+    max-width: 65%;
+    margin: 0 0 12px;
+    color: #24583F;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+#dashboardScreen .dashboard-welcome p {
+    position: relative;
+    z-index: 1;
+    max-width: 65%;
+    margin: 0;
+    color: #68736D;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* FOOD OVERVIEW */
+
+#dashboardScreen .food-overview {
+    margin-bottom: 30px;
+}
+
+#dashboardScreen .food-overview > h2,
+#dashboardScreen .quick-actions > h2 {
+    margin: 0 0 16px;
+    color: #24583F;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+#dashboardScreen .overview-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+#dashboardScreen .overview-card {
+    min-width: 0;
+    min-height: 145px;
+    padding: 19px 16px;
+    border: 1px solid #DCEADF;
+    border-radius: 21px;
+    background: linear-gradient(145deg, #FFFFFF, #EAF4EC);
+    box-shadow: 0 6px 18px rgba(36,88,63,0.08);
+}
+
+#dashboardScreen .overview-card:nth-child(2) {
+    background: linear-gradient(145deg, #FFFFFF, #FFF0DF);
+    border-color: #F3DFC8;
+}
+
+#dashboardScreen .overview-card h3 {
+    min-height: 38px;
+    margin: 0 0 13px;
+    color: #68736D;
+    font-size: 13px;
+    line-height: 1.5;
+    font-weight: 600;
+}
+
+#dashboardScreen .overview-card p {
+    margin: 0;
+    color: #24583F;
+    font-size: 35px;
+    font-weight: 800;
+}
+
+#dashboardScreen .overview-card:nth-child(2) p {
+    color: #E87932;
+}
+
+/* QUICK ACTIONS */
+
+#dashboardScreen .quick-actions {
+    margin-top: 10px;
+}
+
+#dashboardScreen .quick-action-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+}
+
+#dashboardScreen .quick-action-card {
+    display: grid;
+    grid-template-columns: 72px minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    column-gap: 15px;
+    align-items: center;
+    position: relative;
+    min-height: 112px;
+    padding: 17px;
+    border: 1px solid #DCEADF;
+    border-radius: 22px;
+    background: linear-gradient(110deg, #FFFFFF, #EDF6EF);
+    box-shadow: 0 6px 18px rgba(36,88,63,0.07);
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#dashboardScreen .quick-action-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 22px rgba(36,88,63,0.13);
+}
+
+#dashboardScreen .quick-action-card:nth-child(2) {
+    background: linear-gradient(110deg, #FFFFFF, #FFF0DF);
+    border-color: #F3DFC8;
+}
+
+#dashboardScreen .quick-action-card:nth-child(3) {
+    background: linear-gradient(110deg, #FFFFFF, #F0EBF8);
+    border-color: #E6DDF0;
+}
+
+/* QUICK ACTION ICON */
+
+#dashboardScreen .quick-action-icon {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    width: 72px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 19px;
+    background: #DFF0E3;
+    font-size: 39px;
+}
+
+#dashboardScreen .quick-action-card:nth-child(2) .quick-action-icon {
+    background: #FFE5C9;
+}
+
+#dashboardScreen .quick-action-card:nth-child(3) .quick-action-icon {
+    background: #EAE1F4;
+}
+
+/* QUICK ACTION TEXT */
+
+#dashboardScreen .quick-action-card h3 {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: end;
+    margin: 0 0 5px;
+    color: #24583F;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+#dashboardScreen .quick-action-card p {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start;
+    margin: 0;
+    color: #68736D;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* BOTTOM NAVIGATION - ALL SCREENS */
+
+nav.bottom-navigation {
+    position: fixed !important;
+    z-index: 9999 !important;
+    left: 50% !important;
+    bottom: 10px !important;
+    transform: translateX(-50%) !important;
+
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-around !important;
+    align-items: center !important;
+
+    width: calc(100% - 28px) !important;
+    max-width: 480px !important;
+    min-height: 73px !important;
+
+    padding: 8px 5px !important;
+    margin: 0 !important;
+
+    background: #2F704C !important;
+    border-radius: 21px !important;
+    box-shadow: 0 6px 22px rgba(30,70,40,0.22) !important;
+}
+
+nav.bottom-navigation > button.nav-item {
+    display: flex !important;
+    flex: 1 1 25% !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+
+    width: 25% !important;
+    min-width: 0 !important;
+    height: 58px !important;
+
+    padding: 5px 2px !important;
+    margin: 0 !important;
+
+    border: none !important;
+    border-radius: 13px !important;
+    background: transparent !important;
+    color: rgba(255,255,255,0.75) !important;
+
+    cursor: pointer;
+}
+
+nav.bottom-navigation > button.nav-item span {
+    display: block !important;
+    margin: 0 0 3px !important;
+    font-size: 22px !important;
+    line-height: 25px !important;
+}
+
+nav.bottom-navigation > button.nav-item small {
+    display: block !important;
+    color: inherit !important;
+    font-size: 10px !important;
+    line-height: 14px !important;
+    white-space: nowrap !important;
+}
+
+nav.bottom-navigation > button.nav-item.active {
+    color: #FFD29F !important;
+    font-weight: 800 !important;
+}
+
+nav.bottom-navigation > button.nav-item.active span {
+    transform: translateY(-2px);
+}
+
+/* OTHER SCREEN SPACING */
+
+#foodExpiryScreen,
+#foodWasteScreen,
+#recipesScreen,
+#profileScreen {
+    padding-bottom: 105px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 480px) {
+    #dashboardScreen .dashboard-header {
+        padding: 17px 16px;
+    }
+
+    #dashboardScreen .dashboard-main {
+        padding: 8px 16px 30px;
+    }
+
+    #dashboardScreen .dashboard-welcome {
+        min-height: 175px;
+        padding: 24px 19px;
+    }
+
+    #dashboardScreen .dashboard-welcome h1 {
+        font-size: 24px;
+    }
+
+    #dashboardScreen .dashboard-welcome::after {
+        right: 5px;
+        font-size: 75px;
+    }
+
+    #dashboardScreen .overview-card {
+        padding: 16px 12px;
+        min-height: 135px;
+    }
+
+    #dashboardScreen .overview-card h3 {
+        font-size: 12px;
+    }
+
+    #dashboardScreen .overview-card p {
+        font-size: 31px;
+    }
+}
+
+@media (max-width: 360px) {
+    #dashboardScreen .dashboard-main {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    #dashboardScreen .dashboard-welcome h1 {
+        font-size: 21px;
+    }
+
+    nav.bottom-navigation {
+        width: calc(100% - 16px) !important;
+    }
+
+    nav.bottom-navigation > button.nav-item small {
+        font-size: 9px !important;
+    }
+}
+
+
+/* FOOD TRACK DASHBOARD FOOD PHOTOS */
+
+#dashboardScreen .quick-action-icon {
+    width: 75px;
+    height: 75px;
+    min-width: 75px;
+    overflow: hidden;
+    padding: 0;
+    border-radius: 18px;
+}
+
+#dashboardScreen .quick-action-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 18px;
+}
+
+/* FOOD OVERVIEW IMAGE CARDS */
+
+#dashboardScreen .overview-card {
+    overflow: hidden;
+    padding: 0 0 17px;
+    border-radius: 21px;
+}
+
+#dashboardScreen .overview-image {
+    width: 100%;
+    height: 105px;
+    overflow: hidden;
+    margin-bottom: 13px;
+}
+
+#dashboardScreen .overview-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+#dashboardScreen .overview-card h3 {
+    min-height: auto;
+    margin: 0 13px 7px;
+}
+
+#dashboardScreen .overview-card p {
+    margin: 0 13px;
+}
+
+
+/* =====================================
+   BEAUTIFUL DASHBOARD WELCOME CARD
+===================================== */
+
+#dashboardScreen .dashboard-welcome {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 225px;
+    padding: 25px 20px 25px 25px;
+    margin-bottom: 28px;
+    overflow: hidden;
+    border-radius: 25px;
+    background: linear-gradient(115deg, #E5F0E9, #FFF0DF);
+    box-shadow: 0 8px 22px rgba(36, 88, 63, 0.10);
+}
+
+/* TEXT AREA */
+
+#dashboardScreen .dashboard-welcome-text {
+    position: relative;
+    z-index: 2;
+    width: 58%;
+}
+
+#dashboardScreen .welcome-label {
+    display: inline-block;
+    margin-bottom: 13px;
+    color: #3F7D58;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+#dashboardScreen .dashboard-welcome h1 {
+    max-width: 100%;
+    margin: 0 0 12px;
+    color: #24583F;
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+#dashboardScreen .dashboard-welcome p {
+    max-width: 100%;
+    margin: 0;
+    color: #46594C;
+    font-size: 13px;
+    line-height: 1.8;
+    font-weight: 500;
+}
+
+/* FOOD ILLUSTRATION */
+
+#dashboardScreen .dashboard-welcome-image {
+    position: absolute;
+    right: 5px;
+    bottom: 0;
+    width: 45%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+#dashboardScreen .dashboard-welcome-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+}
+
+/* REMOVE OLD DECORATIVE EMOJI */
+
+#dashboardScreen .dashboard-welcome::after {
+    content: none;
+}
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+
+    #dashboardScreen .dashboard-welcome {
+        min-height: 205px;
+        padding: 22px 16px;
+    }
+
+    #dashboardScreen .dashboard-welcome-text {
+        width: 61%;
+    }
+
+    #dashboardScreen .dashboard-welcome h1 {
+        font-size: 25px;
+    }
+
+    #dashboardScreen .dashboard-welcome p {
+        font-size: 12px;
+        line-height: 1.7;
+    }
+
+    #dashboardScreen .welcome-label {
+        font-size: 8px;
+        letter-spacing: 0.5px;
+    }
+
+    #dashboardScreen .dashboard-welcome-image {
+        width: 43%;
+        right: 0;
+    }
+}

@@ -1,0 +1,974 @@
+
+/* ==========================================
+   FOOD TRACK - AUTHENTICATION STYLES
+   Welcome, Account, Login and Register
+========================================== */
+
+/* WELCOME SCREEN */
+
+.welcome-container {
+    width: min(100%, 480px);
+    min-height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 22px;
+
+    background: linear-gradient(
+        155deg,
+        #FFFCF4 0%,
+        #FFF8E7 100%
+    );
+}
+
+.welcome-screen {
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    position: relative;
+}
+
+.welcome-brand {
+    margin-bottom: 12px;
+}
+
+.welcome-brand .brand-leaf {
+    display: block;
+    font-size: 27px;
+    margin-bottom: 5px;
+}
+
+.welcome-brand h1 {
+    color: #24583F;
+    font-size: 39px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+}
+
+.welcome-brand h1 span {
+    color: #E87932;
+}
+
+.welcome-brand p {
+    color: #68736D;
+    font-size: 13px;
+    margin-top: 7px;
+}
+
+.welcome-image {
+    width: 100%;
+    margin: 12px auto 8px;
+}
+
+.welcome-vegetable-image {
+    width: 100%;
+    max-width: 350px;
+    max-height: 300px;
+    object-fit: contain;
+    display: block;
+    margin: auto;
+}
+
+.welcome-content {
+    margin-top: 10px;
+}
+
+.welcome-content h2 {
+    color: #24583F;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.welcome-content p {
+    color: #68736D;
+    font-size: 14px;
+    line-height: 1.7;
+    max-width: 330px;
+    margin: 0 auto 24px;
+}
+
+.welcome-start-btn {
+    width: 100%;
+    max-width: 330px;
+    min-height: 57px;
+    padding: 14px 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border: none;
+    border-radius: 50px;
+    background: #3F7D58;
+    color: white;
+
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+
+    box-shadow: 0 7px 18px rgba(63,125,88,.18);
+}
+
+.welcome-start-btn:hover {
+    background: #24583F;
+}
+
+.welcome-arrow {
+    font-size: 24px;
+}
+
+
+/* SHARED AUTHENTICATION CONTENT */
+
+.auth-content {
+    width: 100%;
+    max-width: 390px;
+    margin: auto;
+}
+
+.brand-lockup {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.brand-name {
+    color: #24583F;
+    font-size: 34px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.brand-name span {
+    color: #E87932;
+}
+
+.brand-tagline {
+    color: #68736D;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.welcome-copy {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.welcome-copy h2 {
+    color: #24583F;
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.welcome-copy p {
+    color: #68736D;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* ACCOUNT CHOICE SCREEN */
+
+#accountScreen {
+    background: linear-gradient(
+        155deg,
+        #FFFCF4,
+        #FFF8E7
+    );
+}
+
+.account-image {
+    width: 100%;
+    margin: 15px auto;
+    text-align: center;
+}
+
+.account-vegetable-image {
+    width: 100%;
+    max-width: 280px;
+    max-height: 230px;
+    object-fit: contain;
+}
+
+.account-welcome-copy {
+    margin-top: 15px;
+}
+
+.account-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 25px;
+}
+
+.compact-brand {
+    text-align: center;
+}
+
+
+/* LOGIN SCREEN */
+
+#loginScreen {
+    background: linear-gradient(
+        155deg,
+        #FFFCF4 0%,
+        #FFF8E7 100%
+    );
+}
+
+.login-brand {
+    margin-bottom: 15px;
+}
+
+.login-illustration {
+    width: 100%;
+    margin: 10px auto 15px;
+    text-align: center;
+}
+
+.login-food-image {
+    width: 100%;
+    max-width: 260px;
+    height: 190px;
+    object-fit: contain;
+    border-radius: 18px;
+}
+
+.login-welcome-copy {
+    margin-bottom: 22px;
+}
+
+.login-form {
+    margin-top: 10px;
+}
+
+.auth-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-wrap {
+    width: 100%;
+    min-height: 55px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 0 16px;
+
+    background: white;
+    border: 1px solid #D9DED9;
+    border-radius: 14px;
+
+    transition: border-color .2s,
+                box-shadow .2s;
+}
+
+.input-wrap:focus-within {
+    border-color: #3F7D58;
+    box-shadow: 0 0 0 3px rgba(63,125,88,.10);
+}
+
+.field-icon {
+    font-size: 17px;
+    color: #3F7D58;
+}
+
+.input-wrap input {
+    width: 100%;
+    min-width: 0;
+    height: 52px;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+    color: #34423A;
+    font-size: 14px;
+}
+
+.input-wrap input::placeholder {
+    color: #9AA39C;
+}
+
+.login-button {
+    margin-top: 5px;
+}
+
+.switch-auth {
+    text-align: center;
+    color: #68736D;
+    font-size: 13px;
+    margin-top: 23px;
+}
+
+.switch-auth a {
+    color: #3F7D58;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.switch-auth a:hover {
+    color: #E87932;
+    text-decoration: underline;
+}
+
+
+/* REGISTER SCREEN */
+
+#registerScreen {
+    background: linear-gradient(
+        155deg,
+        #FFFCF4,
+        #FFF8E7
+    );
+}
+
+#registerScreen .brand-lockup {
+    margin-bottom: 22px;
+}
+
+#registerScreen .welcome-copy {
+    margin-bottom: 20px;
+}
+
+#registerScreen .auth-form {
+    gap: 12px;
+}
+
+.register-button {
+    margin-top: 8px;
+}
+
+.error-message {
+    color: #D9534F;
+    font-size: 12px;
+    margin-top: -8px;
+    text-align: left;
+}
+
+.register-produce {
+    width: 100%;
+    max-width: 200px;
+    margin: 10px auto;
+}
+
+.small-produce {
+    width: 100%;
+    height: auto;
+}
+
+
+/* RESPONSIVE AUTH DESIGN */
+
+@media (max-width: 600px) {
+
+    .welcome-container {
+        width: 100%;
+        min-height: 100vh;
+        padding: 25px 22px;
+    }
+
+    .welcome-brand h1 {
+        font-size: 35px;
+    }
+
+    .welcome-vegetable-image {
+        max-width: 310px;
+        max-height: 260px;
+    }
+
+    .welcome-content h2 {
+        font-size: 23px;
+    }
+
+    .auth-content {
+        max-width: 100%;
+    }
+
+    .brand-name {
+        font-size: 31px;
+    }
+
+    .login-food-image {
+        max-width: 230px;
+        height: 165px;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .welcome-container {
+        padding: 20px 17px;
+    }
+
+    .welcome-brand h1 {
+        font-size: 31px;
+    }
+
+    .welcome-vegetable-image {
+        max-height: 220px;
+    }
+
+    .welcome-content h2,
+    .welcome-copy h2 {
+        font-size: 21px;
+    }
+
+    .brand-name {
+        font-size: 29px;
+    }
+
+    .primary-button,
+    .secondary-button {
+        min-height: 52px;
+        font-size: 14px;
+    }
+}
+
+@media (max-height: 760px) {
+
+    .welcome-container {
+        padding-top: 18px;
+        padding-bottom: 18px;
+    }
+
+    .welcome-vegetable-image {
+        max-height: 210px;
+    }
+
+    .welcome-brand {
+        margin-bottom: 5px;
+    }
+
+    .welcome-content {
+        margin-top: 5px;
+    }
+
+    .login-food-image {
+        height: 140px;
+    }
+}
+
+.welcome-start-btn:hover {
+    background: #E87932;
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(232, 121, 50, 0.25);
+}
+
+.welcome-start-btn {
+    display: block;
+    width: 100%;
+    max-width: 280px;
+    margin: 25px auto 0;
+}
+
+/* YES - I have an account button */
+#accountScreen .account-buttons button:first-child:hover {
+    background: #E87932;
+    color: #FFFFFF;
+    border-color: #E87932;
+}
+
+/* NO - I haven't button */
+#accountScreen .account-buttons button:last-child:hover {
+    background: #E87932;
+    color: #FFFFFF;
+    border-color: #E87932;
+}
+
+#loginScreen .login-form button:hover,
+#loginScreen .primary-button:hover {
+    background: #E87932;
+    color: #FFFFFF;
+    border-color: #E87932;
+}
+
+
+/* ==========================================
+   FOOD TRACK - ACCOUNT SCREEN DESIGN
+========================================== */
+
+#accountScreen {
+    min-height: 100vh;
+    width: 100%;
+    padding: 25px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:
+        radial-gradient(circle at 10% 10%, #E5F0E9 0%, transparent 35%),
+        linear-gradient(145deg, #FFFCF4, #FFF3DF) !important;
+}
+
+#accountScreen .auth-content {
+    width: 100%;
+    max-width: 420px;
+    padding: 30px 25px;
+    background: rgba(255,255,255,0.92);
+    border: 1px solid #E5EBDD;
+    border-radius: 28px;
+    box-shadow: 0 15px 40px rgba(36,88,63,0.12);
+    text-align: center;
+}
+
+#accountScreen .brand-name {
+    color: #3F7D58 !important;
+    font-size: 38px;
+    font-weight: 800;
+}
+
+#accountScreen .brand-name span {
+    color: #F4A261 !important;
+}
+
+#accountScreen .brand-tagline {
+    color: #68736D;
+}
+
+#accountScreen .welcome-copy h2 {
+    color: #24583F;
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+#accountScreen .welcome-copy p {
+    color: #68736D;
+    line-height: 1.7;
+}
+
+/* Food illustration */
+
+#accountScreen .account-image {
+    margin: 10px auto 20px;
+}
+
+#accountScreen .account-vegetable-image {
+    width: 100%;
+    max-width: 270px;
+    height: 190px;
+    object-fit: contain;
+}
+
+/* Account buttons */
+
+#accountScreen .account-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    margin-top: 25px;
+}
+
+#accountScreen .account-buttons button {
+    width: 100%;
+    min-height: 55px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* Existing account */
+
+#accountScreen .account-buttons button:first-child {
+    background: #3F7D58 !important;
+    color: white !important;
+    border: 2px solid #3F7D58 !important;
+}
+
+/* Create account */
+
+#accountScreen .account-buttons button:last-child {
+    background: #F4A261 !important;
+    color: #24583F !important;
+    border: 2px solid #F4A261 !important;
+}
+
+#accountScreen .account-buttons button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 15px rgba(36,88,63,0.15);
+}
+
+/* Back button */
+
+#accountScreen button.secondary-button {
+    background: transparent !important;
+    color: #3F7D58 !important;
+    border: 1px solid #3F7D58 !important;
+}
+
+#accountScreen button.secondary-button:hover {
+    background: #E5F0E9 !important;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    #accountScreen .auth-content {
+        padding: 25px 20px;
+    }
+
+    #accountScreen .account-vegetable-image {
+        max-width: 240px;
+        height: 165px;
+    }
+}
+
+
+/* ==========================================
+   FOOD TRACK - BEAUTIFUL ACCOUNT SCREEN
+========================================== */
+
+.account-screen {
+    width: 100%;
+    min-height: 100vh;
+    padding: 30px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #E5F0E9, #FFF8E7, #FFF0DD);
+}
+
+.account-card {
+    width: 100%;
+    max-width: 440px;
+    padding: 30px 28px 22px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    background: #FFFFFF;
+    border: 1px solid #E4EBDD;
+    border-radius: 30px;
+    box-shadow: 0 18px 50px rgba(36, 88, 63, 0.14);
+    z-index: 1;
+}
+
+.account-decoration {
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.decoration-one {
+    width: 170px;
+    height: 170px;
+    background: #E5F0E9;
+    top: -85px;
+    left: -65px;
+}
+
+.decoration-two {
+    width: 150px;
+    height: 150px;
+    background: #FFF0DD;
+    bottom: -75px;
+    right: -65px;
+}
+
+.account-brand {
+    margin-bottom: 12px;
+}
+
+.account-brand h1 {
+    font-size: 39px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+}
+
+.account-food {
+    color: #3F7D58;
+}
+
+.account-track {
+    color: #F4A261;
+}
+
+.account-brand p {
+    color: #68736D;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.account-image {
+    width: 100%;
+    height: 195px;
+    margin: 8px auto 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #F0F7F0, #FFF5E9);
+    border-radius: 24px;
+    border: 1px solid #E5F0E9;
+}
+
+.account-image img {
+    width: 100%;
+    height: 185px;
+    object-fit: contain;
+}
+
+.account-heading {
+    margin: 12px 0 20px;
+}
+
+.account-leaf {
+    font-size: 25px;
+}
+
+.account-heading h2 {
+    color: #24583F;
+    font-size: 27px;
+    font-weight: 800;
+    margin: 5px 0 8px;
+}
+
+.account-heading p {
+    color: #68736D;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.account-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.account-buttons button {
+    width: 100%;
+    min-height: 57px;
+    padding: 12px 17px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 17px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.account-login-btn {
+    background: #3F7D58;
+    border: 2px solid #3F7D58;
+    color: #FFFFFF;
+    box-shadow: 0 6px 14px rgba(63, 125, 88, 0.18);
+}
+
+.account-register-btn {
+    background: #FFF0DD;
+    border: 2px solid #F4A261;
+    color: #24583F;
+}
+
+.account-arrow {
+    margin-left: auto;
+    font-size: 20px;
+}
+
+.account-buttons button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(36, 88, 63, 0.16);
+}
+
+.account-login-btn:hover {
+    background: #24583F;
+}
+
+.account-register-btn:hover {
+    background: #F4A261;
+    color: #FFFFFF;
+}
+
+.account-back-btn {
+    margin-top: 19px;
+    padding: 9px 22px;
+    background: transparent;
+    border: 1px solid #3F7D58;
+    border-radius: 25px;
+    color: #3F7D58;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.account-back-btn:hover {
+    background: #E5F0E9;
+}
+
+.account-footer {
+    margin-top: 18px;
+    color: #89938B;
+    font-size: 11px;
+}
+
+@media (max-width: 600px) {
+    .account-card {
+        padding: 25px 20px 20px;
+    }
+
+    .account-image {
+        height: 170px;
+    }
+
+    .account-image img {
+        height: 160px;
+    }
+
+    .account-brand h1 {
+        font-size: 35px;
+    }
+}
+
+
+/* ==========================================
+   FOOD TRACK - LOGIN SCREEN DESIGN
+========================================== */
+
+#loginScreen {
+    min-height: 100vh;
+    width: 100%;
+    padding: 25px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #E5F0E9, #FFF8E7, #FFF0DD) !important;
+}
+
+#loginScreen .auth-box {
+    width: 100%;
+    max-width: 440px;
+    padding: 30px 28px;
+    background: #FFFFFF;
+    border: 1px solid #E5EBDD;
+    border-radius: 28px;
+    box-shadow: 0 15px 45px rgba(36, 88, 63, 0.13);
+    text-align: center;
+}
+
+#loginScreen .auth-box::before {
+    content: "🥑 🥬 🍅";
+    display: block;
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+#loginScreen .auth-box h2 {
+    color: #24583F;
+    font-size: 29px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+#loginScreen .auth-box > p {
+    color: #68736D;
+    font-size: 14px;
+    margin-bottom: 22px;
+}
+
+#loginScreen .form-group {
+    text-align: left;
+    margin-bottom: 16px;
+}
+
+#loginScreen .form-group label {
+    display: block;
+    color: #24583F;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+#loginScreen .form-group input {
+    width: 100%;
+    min-height: 52px;
+    padding: 12px 15px;
+    border: 1px solid #D9DED9;
+    border-radius: 13px;
+    background: #FFFCF4;
+    color: #34423A;
+    outline: none;
+    font-size: 14px;
+}
+
+#loginScreen .form-group input:focus {
+    border-color: #3F7D58;
+    box-shadow: 0 0 0 3px rgba(63,125,88,0.10);
+}
+
+#loginScreen .auth-button {
+    width: 100%;
+    min-height: 55px;
+    margin-top: 8px;
+    border: none;
+    border-radius: 30px;
+    background: #3F7D58;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#loginScreen .auth-button:hover {
+    background: #E87932;
+    transform: translateY(-2px);
+}
+
+#loginScreen .auth-box a {
+    color: #E87932;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+#loginScreen .auth-box a:hover {
+    color: #24583F;
+    text-decoration: underline;
+}
+
+#loginScreen .back-button {
+    margin-top: 18px;
+    padding: 10px 25px;
+    border: 1px solid #3F7D58;
+    border-radius: 25px;
+    background: transparent;
+    color: #3F7D58;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#loginScreen .back-button:hover {
+    background: #E5F0E9;
+}
+
+@media (max-width: 600px) {
+    #loginScreen .auth-box {
+        padding: 25px 20px;
+    }
+}
+
+/* Login screen food image */
+#loginScreen .login-image {
+    width: 100%;
+    max-width: 260px;
+    height: 170px;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#loginScreen .login-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}

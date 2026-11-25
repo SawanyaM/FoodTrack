@@ -1,0 +1,1052 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Food Track</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/food.css">
+    <link rel="stylesheet" href="css/recipes.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/waste.css">
+</head>
+
+<body>
+
+<!-- ================= WELCOME SCREEN ================= -->
+
+<section id="welcomeScreen" class="welcome-container">
+
+    <div class="welcome-screen">
+
+        <div class="welcome-brand">
+            <h1>
+                <span class="food-text">Food</span>
+                <span class="track-text">Track</span>
+            </h1>
+
+            <p>Track your food, reduce waste, cook smarter!</p>
+        </div>
+
+        <div class="welcome-image">
+            <img src="images/foodtrack-welcome-illustration.png"
+                 alt="Fresh vegetables"
+                 class="welcome-vegetable-image">
+        </div>
+
+        <div class="welcome-content">
+
+            <h2>Welcome to Food Track!</h2>
+
+            <p>
+                Manage your food items, track expiry dates
+                and discover delicious recipes.
+            </p>
+
+            <button
+                type="button"
+                class="welcome-start-btn"
+                onclick="showLogin()">
+
+                <span>Get Started</span>
+                <span class="welcome-arrow">→</span>
+
+            </button>
+
+            <button
+                type="button"
+                class="secondary-button guest-start-btn"
+                onclick="continueAsGuest()">
+
+                Continue as Guest
+
+            </button>
+
+            <p class="guest-info">
+                Explore recipes and sample food details
+                without creating an account.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ACCOUNT CHOICE SCREEN ================= -->
+
+<section id="accountScreen" class="account-screen" style="display:none;">
+
+    <div class="account-card">
+
+        <div class="account-decoration decoration-one"></div>
+        <div class="account-decoration decoration-two"></div>
+
+        <!-- Brand -->
+
+        <div class="account-brand">
+
+            <h1>
+                <span class="account-food">Food</span><span class="account-track">Track</span>
+            </h1>
+
+            <p>Track your food, reduce waste, cook smarter!</p>
+
+        </div>
+
+
+        <!-- Food Illustration -->
+
+        <div class="account-image">
+
+            <img
+                src="images/foodtrack-welcome-illustration.png"
+                alt="Fresh food and vegetables">
+
+        </div>
+
+
+        <!-- Welcome Text -->
+
+        <div class="account-heading">
+
+            <span class="account-leaf">🌿</span>
+
+            <h2>Welcome!</h2>
+
+            <p>Do you already have a Food Track account?</p>
+
+        </div>
+
+
+        <!-- Account Buttons -->
+
+        <div class="account-buttons">
+
+            <button
+                type="button"
+                class="account-login-btn"
+                onclick="showLoginForm()">
+
+                <span>👤</span>
+
+                <span>Yes, I have an account</span>
+
+                <span class="account-arrow">→</span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="account-register-btn"
+                onclick="showRegisterForm()">
+
+                <span>✨</span>
+
+                <span>No, create an account</span>
+
+                <span class="account-arrow">→</span>
+
+            </button>
+
+        </div>
+
+
+        <!-- Back Button -->
+
+        <button
+            type="button"
+            class="account-back-btn"
+            onclick="hideAllScreens(); document.getElementById('welcomeScreen').style.display='flex';">
+
+            ← Back
+
+        </button>
+
+
+        <p class="account-footer">
+            Fresh food. Less waste. Better living. 🥑
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= LOGIN SCREEN ================= -->
+
+<section id="loginScreen" class="auth-container" style="display:none;">
+
+    <div class="auth-box">
+        <div class="account-image login-image">
+            <img src="images/foodtrack-welcome-illustration.png"
+                alt="Fresh food and vegetables">
+        </div>
+
+        <h2>Login</h2>
+
+        <p>Welcome back to Food Track!</p>
+
+        <form id="loginForm" onsubmit="loginUser(event)">
+
+            <div class="form-group">
+
+                <label for="loginEmail">Email Address</label>
+
+                <input
+                    type="email"
+                    id="loginEmail"
+                    placeholder="Enter your email"
+                    required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="loginPassword">Password</label>
+
+                <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="Enter your password"
+                    required>
+
+            </div>
+
+            <button type="submit" class="auth-button">
+                Login
+            </button>
+
+        </form>
+
+        <p>
+            Don't have an account?
+            <a href="#" onclick="showRegisterForm(); return false;">
+                Register
+            </a>
+        </p>
+
+        <button
+            type="button"
+            class="back-button"
+            onclick="showLogin()">
+
+            Back
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= REGISTER SCREEN ================= -->
+
+<section id="registerScreen" class="auth-container" style="display:none;">
+
+    <div class="auth-box">
+
+        <h2>Create Account</h2>
+
+        <p>Join Food Track today!</p>
+
+        <form id="registerForm" onsubmit="registerUser(event)">
+
+            <div class="form-group">
+
+                <label for="registerName">Full Name</label>
+
+                <input
+                    type="text"
+                    id="registerName"
+                    placeholder="Enter your full name"
+                    required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="registerEmail">Email Address</label>
+
+                <input
+                    type="email"
+                    id="registerEmail"
+                    placeholder="Enter your email"
+                    required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="registerPhone">Phone Number</label>
+
+                <input
+                    type="tel"
+                    id="registerPhone"
+                    placeholder="Enter your phone number"
+                    required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="registerPassword">Password</label>
+
+                <input
+                    type="password"
+                    id="registerPassword"
+                    placeholder="Create a password"
+                    required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="confirmPassword">Confirm Password</label>
+
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    placeholder="Confirm your password"
+                    required>
+
+            </div>
+
+            <button type="submit" class="auth-button">
+                Create Account
+            </button>
+
+        </form>
+
+        <p>
+            Already have an account?
+            <a href="#" onclick="showLoginForm(); return false;">
+                Login
+            </a>
+        </p>
+
+        <button
+            type="button"
+            class="back-button"
+            onclick="showLogin()">
+
+            Back
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DASHBOARD SCREEN ================= -->
+
+<section id="dashboardScreen" style="display:none;">
+
+    <header class="dashboard-header">
+
+        <div class="header-brand">
+            <h2>Food Track</h2>
+        </div>
+
+        <div class="header-actions">
+
+            <button
+                type="button"
+                class="notification-button"
+                onclick="showExpiryNotifications()"
+                title="Expiry Notifications">
+
+                🔔
+
+            </button>
+
+            <button
+                type="button"
+                class="logout-button"
+                onclick="logoutUser()">
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <div
+        id="expiryNotificationPanel"
+        class="notification-panel"
+        style="display:none;">
+
+        <div class="notification-header">
+
+            <h3>Expiry Notifications</h3>
+
+            <button
+                type="button"
+                onclick="closeExpiryNotifications()">
+
+                ✕
+
+            </button>
+
+        </div>
+
+        <div id="expiryNotificationList"></div>
+
+    </div>
+
+
+    <main class="dashboard-main">
+
+        <section class="dashboard-welcome">
+
+            <div class="dashboard-welcome-text">
+
+                <span class="welcome-label">🌿 YOUR SMART FOOD COMPANION</span>
+
+                <h1 id="greetingText">Good Morning!</h1>
+
+                <p>
+                    Welcome to your Food Track dashboard.
+                    Track your food, reduce waste and enjoy cooking!
+                </p>
+
+            </div>
+
+            <div class="dashboard-welcome-image">
+
+                <img
+                    src="images/foodtrack-welcome-illustration.png"
+                    alt="Fresh vegetables and healthy food">
+
+            </div>
+
+        </section>
+
+
+
+        <section class="food-overview">
+
+            <h2>Food Overview</h2>
+
+            <div class="overview-cards">
+
+                <div class="overview-card">
+                    <div class="overview-image">
+                        <img src="images/total-food.jfif" alt="Total Food Items">
+                    </div>
+
+                    <h3>Total Food Items</h3>
+                    <p id="totalFoodCount">0</p>
+                </div>
+
+                <div class="overview-card">
+                    <div class="overview-image">
+                        <img src="images/expiring-food.jfif" alt="Expiring Soon">
+                    </div>
+
+                    <h3>Expiring Soon</h3>
+                    <p id="expiringFoodCount">0</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="quick-actions">
+
+            <h2>Quick Actions</h2>
+
+            <div class="quick-action-container">
+
+                <div
+                    class="quick-action-card"
+                    onclick="showFoodExpiry()">
+
+                    <div class="quick-action-icon">
+                        <img src="images/my-food.jfif" alt="My Food">
+                    </div>
+
+                    <h3>My Food</h3>
+
+                    <p>View and manage your food items.</p>
+
+                </div>
+
+
+                <div
+                    class="quick-action-card"
+                    onclick="showRecipes()">
+
+                    <div class="quick-action-icon">
+                        <img src="images/find-recipes.jfif" alt="Find Recipes">
+                    </div>
+
+                    <h3>Find Recipes</h3>
+
+                    <p>Discover recipes using food ingredients.</p>
+
+                </div>
+
+
+                <div
+                    class="quick-action-card"
+                    onclick="showFoodWaste()">
+
+                    <div class="quick-action-icon">♻️</div>
+
+                    <h3>Food Waste Tracking</h3>
+
+                    <p>Track your food waste and expenses.</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <nav class="bottom-navigation">
+
+        <button type="button" class="nav-item active" onclick="showHome()">
+            <span>🏠</span>
+            <small>Home</small>
+        </button>
+
+        <button type="button" class="nav-item" onclick="showFoodExpiry()">
+            <span>🥬</span>
+            <small>My Food</small>
+        </button>
+
+        <button type="button" class="nav-item" onclick="showRecipes()">
+            <span>🍳</span>
+            <small>Recipes</small>
+        </button>
+
+        <button type="button" class="nav-item" onclick="showProfile()">
+            <span>👤</span>
+            <small>Profile</small>
+        </button>
+
+    </nav>
+
+</section>
+
+
+
+<!-- ================= MY FOOD SCREEN ================= -->
+
+<section id="foodExpiryScreen" style="display:none;">
+
+    <header class="food-page-header">
+
+        <div class="food-header-brand">
+            <h2>🌿 Food <span>Track</span></h2>
+            <p>Fresh food. Less waste. Better living.</p>
+        </div>
+
+        <button type="button" class="food-back-button" onclick="showHome()">
+            ← Home
+        </button>
+
+    </header>
+
+    <main class="food-page-content">
+
+        <!-- MY FOOD WELCOME -->
+
+        <section class="food-hero">
+
+            <div class="food-hero-text">
+                <span class="food-hero-label">🌱 YOUR FOOD COLLECTION</span>
+                <h1>My Food</h1>
+                <p>
+                    Keep track of your food items and expiry dates.
+                    Stay organized and reduce food waste!
+                </p>
+            </div>
+
+            <div class="food-hero-icon">
+                🥑
+            </div>
+
+        </section>
+
+
+        <!-- ADD FOOD FORM -->
+
+        <section class="food-form-panel">
+
+            <div class="food-section-heading">
+                <div class="food-heading-icon">＋</div>
+                <div>
+                    <h2>Add Food Item</h2>
+                    <p>Enter your food details below</p>
+                </div>
+            </div>
+
+            <form id="foodForm" onsubmit="addFood(event)">
+
+                <div class="food-form-grid">
+
+                    <div class="form-group">
+                        <label for="foodName">Food Name</label>
+                        <input
+                            type="text"
+                            id="foodName"
+                            placeholder="e.g. Wheat Flour"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="foodCategory">Category</label>
+                        <select id="foodCategory" required>
+                            <option value="">Select Category</option>
+                            <option value="Vegetables">Vegetables</option>
+                            <option value="Fruits">Fruits</option>
+                            <option value="Dairy">Dairy</option>
+                            <option value="Meat">Meat</option>
+                            <option value="Baking">Baking</option>
+                            <option value="Grains">Grains</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="expiryDate">Expiry Date</label>
+                        <input
+                            type="date"
+                            id="expiryDate"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="foodQuantity">Quantity</label>
+                        <input
+                            type="number"
+                            id="foodQuantity"
+                            min="0.01"
+                            step="0.01"
+                            placeholder="Enter quantity"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="foodUnit">Unit</label>
+                        <select id="foodUnit" required>
+                            <option value="">Select Unit</option>
+                            <option value="kg">kg</option>
+                            <option value="g">g</option>
+                            <option value="L">L</option>
+                            <option value="ml">ml</option>
+                            <option value="Packets">Packets</option>
+                            <option value="Pieces">Pieces</option>
+                            <option value="Bottles">Bottles</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="foodPrice">Price (Rs.)</label>
+                        <input
+                            type="number"
+                            id="foodPrice"
+                            min="0"
+                            step="0.01"
+                            placeholder="Enter price"
+                            required>
+                    </div>
+
+                </div>
+
+                <button type="submit" class="food-add-button">
+                    <span>＋</span> Add Food Item
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- FOOD ITEMS LIST -->
+
+        <section class="food-list-panel">
+
+            <div class="food-list-heading">
+                <div>
+                    <h2>Your Food Items</h2>
+                    <p>Manage your stored food items</p>
+                </div>
+
+                <div class="food-list-icon">🧺</div>
+            </div>
+
+            <div id="foodList"></div>
+
+        </section>
+
+    </main>
+
+
+    <!-- BOTTOM NAVIGATION -->
+
+    <nav class="bottom-navigation">
+
+        <button type="button" class="nav-item" onclick="showHome()">
+            <span class="nav-icon">🏠</span>
+            <small>Home</small>
+        </button>
+
+        <button type="button" class="nav-item active" onclick="showFoodExpiry()">
+            <span class="nav-icon">🥬</span>
+            <small>My Food</small>
+        </button>
+
+        <button type="button" class="nav-item" onclick="showRecipes()">
+            <span class="nav-icon">🍳</span>
+            <small>Recipes</small>
+        </button>
+
+        <button type="button" class="nav-item" onclick="showProfile()">
+            <span class="nav-icon">👤</span>
+            <small>Profile</small>
+        </button>
+
+    </nav>
+
+</section>
+
+<!-- ================= FOOD WASTE SCREEN ================= -->
+
+
+<section id="foodWasteScreen" style="display:none;">
+
+    <header class="waste-header">
+        <div>
+            <span class="waste-label">SMART FOOD MANAGEMENT</span>
+            <h1>Food Waste Tracking</h1>
+            <p>Monitor your food waste and save money</p>
+        </div>
+
+        <button type="button" class="waste-back-button"
+                onclick="showHome()">
+            ← Back to Home
+        </button>
+    </header>
+
+    <main class="waste-main">
+
+        <section class="waste-summary-section">
+
+            <div class="waste-section-heading">
+                <div>
+                    <h2>Monthly Food Waste Summary</h2>
+                    <p>Track your monthly food waste performance</p>
+                </div>
+
+                <div class="waste-month-control">
+                    <label for="wasteMonth">Select Month</label>
+                    <input
+                        type="month"
+                        id="wasteMonth"
+                        onchange="loadFoodWaste()"
+                    >
+                </div>
+            </div>
+
+            <div class="waste-summary-cards">
+
+                <div class="waste-summary-card amount-card">
+                    <div class="waste-card-icon">💰</div>
+                    <span>Total Waste Amount</span>
+                    <h2 id="monthlyWasteAmount">Rs. 0.00</h2>
+                    <p>Money lost through food waste</p>
+                </div>
+
+                <div class="waste-summary-card count-card">
+                    <div class="waste-card-icon">🗑️</div>
+                    <span>Wasted Food Items</span>
+                    <h2 id="wastedFoodCount">0</h2>
+                    <p>Total wasted food records</p>
+                </div>
+
+                <div class="waste-summary-card unrecorded-card">
+                    <div class="waste-card-icon">📋</div>
+                    <span>Unrecorded Price Items</span>
+                    <h2 id="unrecordedPriceCount">0</h2>
+                    <p>Items without recorded prices</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="waste-items-section">
+
+            <div class="waste-items-heading">
+                <div class="waste-heading-icon">🥬</div>
+
+                <div>
+                    <h2>Wasted Food Items</h2>
+                    <p>Review your recorded wasted food</p>
+                </div>
+            </div>
+
+            <div id="foodWasteList" class="waste-items-grid">
+                <p>Loading wasted food items...</p>
+            </div>
+
+        </section>
+
+        <div class="waste-footer">
+            <span>🌱</span>
+            <p>Every saved ingredient makes a difference!</p>
+        </div>
+
+    </main>
+
+    <nav class="bottom-navigation">
+
+        <button class="nav-item" onclick="showHome()">
+            <span class="nav-icon">⌂</span>
+            <span>Home</span>
+        </button>
+
+        <button class="nav-item" onclick="showFoodExpiry()">
+            <span class="nav-icon">🥗</span>
+            <span>My Food</span>
+        </button>
+
+        <button class="nav-item" onclick="showRecipes()">
+            <span class="nav-icon">🍳</span>
+            <span>Recipes</span>
+        </button>
+
+        <button class="nav-item" onclick="showProfile()">
+            <span class="nav-icon">👤</span>
+            <span>Profile</span>
+        </button>
+
+    </nav>
+
+</section>
+
+<!-- ================= RECIPES SCREEN ================= -->
+
+<section id="recipesScreen" style="display:none;">
+
+    <header class="page-header">
+
+        <h2>Recipe Recommendations</h2>
+
+        <button type="button" class="back-button" onclick="showHome()">
+            ← Back to Home
+        </button>
+
+    </header>
+
+
+    <main class="page-content">
+
+        <div id="recipeList" class="recipe-list"></div>
+
+
+        <div id="recipeDetails" class="recipe-details" style="display:none;">
+
+            <button type="button" class="back-button" onclick="backToRecipes()">
+                ← Back to Recipes
+            </button>
+
+            <h2 id="detailRecipeName"></h2>
+
+            <img
+                id="detailRecipeImage"
+                src=""
+                alt="Recipe Image">
+
+            <p>
+                Cooking Time:
+                <span id="detailCookingTime"></span>
+                minutes
+            </p>
+
+
+            <div class="content-panel">
+                <h3>Ingredients</h3>
+                <div id="detailIngredients"></div>
+            </div>
+
+            <div class="content-panel">
+                <h3>Available Ingredients</h3>
+                <div id="detailAvailable"></div>
+            </div>
+
+            <div class="content-panel">
+                <h3>Missing Ingredients</h3>
+                <div id="detailMissing"></div>
+            </div>
+
+            <div class="content-panel">
+                <h3>Instructions</h3>
+                <div id="detailInstructions"></div>
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <nav class="bottom-navigation">
+
+        <button type="button" class="nav-item" onclick="showHome()">
+            <span>🏠</span>
+            <small>Home</small>
+        </button>
+
+        <button type="button" class="nav-item" onclick="showFoodExpiry()">
+            <span>🥬</span>
+            <small>My Food</small>
+        </button>
+
+        <button type="button" class="nav-item active" onclick="showRecipes()">
+            <span>🍳</span>
+            <small>Recipes</small>
+        </button>
+
+        <button type="button" class="nav-item" onclick="showProfile()">
+            <span>👤</span>
+            <small>Profile</small>
+        </button>
+
+    </nav>
+
+</section>
+
+
+<!-- ================= PROFILE SCREEN ================= -->
+
+
+<section id="profileScreen" style="display:none;">
+
+    <header class="profile-header">
+        <div>
+            <span class="profile-label">YOUR ACCOUNT</span>
+            <h1>My Profile</h1>
+            <p>Manage your personal information</p>
+        </div>
+
+        <button type="button" class="profile-back-button"
+                onclick="showHome()">
+            ← Back to Home
+        </button>
+    </header>
+
+    <main class="profile-main">
+
+        <div class="profile-hero">
+            <div class="profile-avatar">👤</div>
+
+            <div class="profile-hero-text">
+                <span>WELCOME TO FOOD TRACK</span>
+                <h2 id="profileHeroName">Food Track User</h2>
+                <p>Your personal food management account</p>
+            </div>
+        </div>
+
+        <div class="profile-information-card">
+
+            <div class="profile-card-heading">
+                <div class="profile-heading-icon">🌿</div>
+
+                <div>
+                    <h2>Personal Information</h2>
+                    <p>Your registered account details</p>
+                </div>
+            </div>
+
+            <div class="profile-info-list">
+
+                <div class="profile-info-item">
+                    <div class="profile-info-icon">👤</div>
+
+                    <div class="profile-info-text">
+                        <span>Full Name</span>
+                        <strong id="profileName">Food Track User</strong>
+                    </div>
+                </div>
+
+                <div class="profile-info-item">
+                    <div class="profile-info-icon">✉️</div>
+
+                    <div class="profile-info-text">
+                        <span>Email Address</span>
+                        <strong id="profileEmail">foodtrackuser@gmail.com</strong>
+                    </div>
+                </div>
+
+                <div class="profile-info-item">
+                    <div class="profile-info-icon">📱</div>
+
+                    <div class="profile-info-text">
+                        <span>Phone Number</span>
+                        <strong id="profilePhone">Not provided</strong>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="profile-footer">
+            <span>🌱</span>
+            <p>Track your food, reduce waste, cook smarter!</p>
+        </div>
+
+    </main>
+
+    <nav class="bottom-navigation">
+
+        <button class="nav-item" onclick="showHome()">
+            <span class="nav-icon">⌂</span>
+            <span>Home</span>
+        </button>
+
+        <button class="nav-item" onclick="showFoodExpiry()">
+            <span class="nav-icon">🥗</span>
+            <span>My Food</span>
+        </button>
+
+        <button class="nav-item" onclick="showRecipes()">
+            <span class="nav-icon">🍳</span>
+            <span>Recipes</span>
+        </button>
+
+        <button class="nav-item active" onclick="showProfile()">
+            <span class="nav-icon">👤</span>
+            <span>Profile</span>
+        </button>
+
+    </nav>
+
+</section>
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="script.js"></script>
+
+</body>
+</html>
